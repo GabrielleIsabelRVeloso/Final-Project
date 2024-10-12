@@ -1,0 +1,12 @@
+body{
+	background-image:url('B.jpg');
+	background-size:cover;
+	
+}
+.About-Us{
+	margin-top:5%;
+	font-size:20px;
+}
+.Link{
+	font-weight: bold;
+}

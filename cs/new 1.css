@@ -1,0 +1,26 @@
+body{
+	background-image: url('BG.png');
+	background-size:100%;
+}
+.FAWPS{
+	font-size: 350%;
+	margin-left:28%;
+	margin-top:3.5%;
+}
+#first{
+	position:fixed;
+	border-radius: 50%;
+	width: 9%;
+	top: 10px;
+	margin-left: 4.7%;
+}
+.About-Cause{
+	position: absolute;
+	margin-left: 50%;
+	margin-top:1%;
+}
+.About-us{
+	position: absolute;
+	margin-top: 10%;
+	margin-left:2%;
+}
