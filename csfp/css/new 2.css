@@ -1,0 +1,42 @@
+body{
+	background-image:url('../img/B.jpg');
+	background-image:cover;
+}
+.name{
+	font-size:20px;
+	margin-top:5%;
+	margin-bottom:5%;
+	font-weight:bold;
+	
+}
+.h{
+	font-weight:bold;
+}
+.N{
+	font-weight:bold;
+}
+.D{
+	Font-weight:bold;
+}
+.T{
+	font-weight:bold;
+}
+.O{
+	font-weight:bold;
+}
+
+.link {
+  text-align: center;  
+}
+
+.link a {
+  color: blue;  
+  text-decoration: none; 
+  font-size: 18px;  
+}
+
+.link a:hover {
+  color: red;  
+  text-decoration: underline;  
+}
+		

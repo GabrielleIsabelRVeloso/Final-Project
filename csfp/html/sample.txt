@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAWPS</title>
+  
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="css/styles.css"> <!-- Adjust the path if needed -->
+</head>
+<body>
+  <!-- Logo Image -->
+  <img src="../img/Logo.png" alt="Logo" id="first">
+  
+  <!-- About Cause Section -->
+  <div class="About-Cause">
+    <a href="../html/About-Cause.html" target="_blank">
+      <img src="../img/About Cause.png" alt="About Cause">
+    </a>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="About-Us">
+    <a href="../html/About-Us.html" target="_blank">
+      <img src="../img/About Us.png" alt="About Us">
+    </a>
+  </div>
+
+</body>
+</html>
