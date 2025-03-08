@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
         { question: "What should you do during a flood?", answers: ["Stay Indoors", "Drive Through Water", "Ignore Warnings", "Go to the River"], correct: 0 }
     ];
 
-    let currentQuestionIndex = 0;
+    let currentQ = 0;
     let score = 0;
     let timer;
     let timeLeft = 60;
 
-    function startTimer() {
+    function startTime() {
         timer = setInterval(() => {
             timeLeft--;
             document.getElementById('timer').innerText = `Time Left: ${timeLeft}s`;
@@ -23,36 +23,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
     }
 
-    function showQuestion() {
-        const questionElement = document.getElementById('question');
-        const answersElement = document.getElementById('answers');
-        questionElement.innerText = questions[currentQuestionIndex].question;
-        answersElement.innerHTML = '';
+    function showQ() {
+        const quesElem = document.getElementById('question');
+        const ansElem = document.getElementById('answers');
+        quesElem.innerText = questions[currentQ].question;
+        ansElem.innerHTML = '';
 
-        questions[currentQuestionIndex].answers.forEach((answer, index) => {
+        questions[currentQ].answers.forEach((answer, index) => {
             const button = document.createElement('button');
             button.innerText = answer;
             button.className = 'answer button';
-            button.onclick = () => checkAnswer(index);
-            answersElement.appendChild(button);
+            button.onclick = () => checkAns(index);
+            ansElem.appendChild(button);
         });
 
         document.getElementById('nextBtn').disabled = true;
-        document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
-        document.getElementById('submitBtn').style.display = currentQuestionIndex === questions.length - 1 ? 'inline-block' : 'none';
+        document.getElementById('prevBtn').disabled = currentQ === 0;
+        document.getElementById('submitBtn').style.display = currentQ === questions.length - 1 ? 'inline-block' : 'none';
     }
 
-    function checkAnswer(selectedIndex) {
-        const correctIndex = questions[currentQuestionIndex].correct;
-        if (selectedIndex === correctIndex) {
+    function checkAns(selectInd) {
+        const correctInd = questions[currentQ].correct;
+        if (selectInd === correctInd) {
             score++;
         }
         const answerButtons = document.querySelectorAll('.answer');
         answerButtons.forEach((button, index) => {
             button.disabled = true;
-            if (index === correctIndex) {
+            if (index === correctInd) {
                 button.classList.add('correct');
-            } else if (index === selectedIndex) {
+            } else if (index === selectInd) {
                 button.classList.add('incorrect');
             }
         });
@@ -61,18 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById('nextBtn').onclick = function () {
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            showQuestion();
+        if (currentQ < questions.length - 1) {
+            currentQ++;
+            showQ();
         } else {
             showScore();
         }
     };
 
     document.getElementById('prevBtn').onclick = function () {
-        if (currentQuestionIndex > 0) {
-            currentQuestionIndex--;
-            showQuestion();
+        if (currentQ > 0) {
+            currentQ--;
+            showQ();
         }
     };
 
@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('score').style.display = 'block';
     }
 
-    startTimer();
-    showQuestion();
+    startTime();
+    showQ();
 });
+
